@@ -31,7 +31,8 @@ export default {
         }
     },
     mounted(){
-        this.state.name = this.$route.params.state
+        // Vue calls the mounted() hook when your component is added to the DOM. It is most often used to send an HTTP request to fetch data that the component will then render.
+        this.state.name = this.$route.params.state //this.state.name = /map/Minnesota if we click on Minnesota
         this.fetchStateData()
     },
     methods:{
@@ -43,7 +44,7 @@ export default {
             }).catch( err=>{
                 //404
                 if(err.response && err.response.status === 404){
-                    this.state.name = '?' //TODO: improve ui
+                    this.state.name = this.$router.push({name: 'PageNotFound'}) //send the user to the 404 component
                 }
                 //500
                 else{

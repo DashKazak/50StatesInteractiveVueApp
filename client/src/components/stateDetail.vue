@@ -2,6 +2,7 @@
 <div class="state-info">
     <span class="state-name">{{state.name}}</span>
     <div>
+        <!-- v-on used to know when the data is changed to emit the new data status to the parent component -->
         <input class="visit-state" type="checkbox" v-model="visited" v-on:change="visitedChanged">
     </div>
 
@@ -18,7 +19,7 @@
 
 export default {
     name:'stateDetail',
-    emits:['update-visited'],
+    emits:['update-visited'], //emit messages to the parent(stateList) if the parent component needs to know about the changes
     props:{
         state:Object //dont modify
     },

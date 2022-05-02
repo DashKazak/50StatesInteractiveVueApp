@@ -7,6 +7,7 @@
 </template>
 
 <script>
+//App vue is the system face, collected response from all parts of the system
 
 import PageFooter from '@/components/PageFooter.vue'
 import PageHeader from './components/PageHeader.vue'

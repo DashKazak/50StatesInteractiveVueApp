@@ -1,5 +1,6 @@
 import axios from "axios"
 export default{
+    //API calls 
     getAllStates(){
         return axios.get('/api/states').then(response =>{
             return response.data

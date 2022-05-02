@@ -15,6 +15,7 @@
 </template>
 
 <script>
+//list of states, what is the front page of the app. From there the user can go to Detail and from there we can see the summary of how many states the user has visited. 
 import stateDetail from './stateDetail.vue'
 import stateSummary from './stateSummary.vue'
 
@@ -26,6 +27,7 @@ export default {
     name:'stateList',
     data(){
        return{
+           //array of states
            states:[]
        } 
     },
@@ -33,6 +35,7 @@ export default {
         this.fetchAllStates()
     },
     methods:{
+        //loading all the 51 states from the database. With sequelize
         fetchAllStates(){
                 this.$stateService.getAllStates().then(states => {
                     this.states = states
@@ -43,6 +46,7 @@ export default {
             })
                 
         },
+        //checking the visited checkmark
         updateVisited(stateName, visited){
             this.$stateService.setVisited(stateName, visited).then(()=>
             {

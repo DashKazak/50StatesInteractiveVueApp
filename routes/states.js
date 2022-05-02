@@ -9,7 +9,9 @@ router.get('/states',function(req,res,next){
     })
     .catch( err => next(err))
 })
-
+//Uses parameter :name in the route
+//path to match any patch request to
+// /state/anything
 router.get('/state/:name',function(req,res,next){
     let stateName = req.params.name
     States.findOne({where:{name:stateName}})

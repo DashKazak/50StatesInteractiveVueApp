@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import StateAPIService from '@/services/stateService'
+
+//import the routes created and use with the app
 import router from '@/router/index'
 import 'leaflet/dist/leaflet.css'
 let app = createApp(App)
