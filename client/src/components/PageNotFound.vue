@@ -13,6 +13,6 @@ Would you like to <router-link to="/">go to the home page?</router-link>
 
 <script>
 export default {
-name: 'NotFound',
+    name: 'NotFound',
 }
 </script>

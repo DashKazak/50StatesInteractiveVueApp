@@ -19,6 +19,7 @@
 import stateDetail from './stateDetail.vue'
 import stateSummary from './stateSummary.vue'
 
+
 export default {
     components: { 
         stateDetail,

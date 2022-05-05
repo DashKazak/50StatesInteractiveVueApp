@@ -25,6 +25,24 @@ router.get('/state/:name',function(req,res,next){
         })
         .catch(err => next(err))
 })
+
+//creating a new page showing only the states you have visited
+// In your server, Create a new API route that gets all the visited states. Your API route should only return states with visited = true.
+router.get('/states/visited', function(req,res,next){
+    States.findAll({where:{visited:true}})
+    .then(state =>{
+        if (state) {
+            return res.json(state)
+        }else{
+            return res.status(500).send('sorry smth went wrong')
+        }
+
+    })
+    .catch(err => next(err))
+        
+
+    
+})
 //patch route to update state status to visited
 router.patch('/states/:name', function(req,res,next){
     let stateName=req.params.name
